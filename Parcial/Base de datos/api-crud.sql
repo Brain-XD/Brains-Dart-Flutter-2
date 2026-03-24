@@ -36,14 +36,15 @@ USE `api-crud`;
 --
 
 CREATE TABLE IF NOT EXISTS `api_users` (
-    `Api_user_id` int(11) NOT NULL,
-    `Api_user` varchar(60) NOT NULL,
-    `Api_password` varchar(255) NOT NULL,
-    `Api_role` enum('Admin', 'Read-only') NOT NULL,
-    `Api_status` enum('Active', 'Inactive') NOT NULL,
-    `Created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-    `Updated_at` timestamp NULL DEFAULT NULL
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci;
+    `Api_user_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `Api_user` VARCHAR(60) NOT NULL,
+    `Api_password` VARCHAR(255) NOT NULL,
+    `Api_role` ENUM('Admin', 'Read-only') NOT NULL,
+    `Api_status` ENUM('Active', 'Inactive') NOT NULL,
+    `Created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    `Updated_at` TIMESTAMP NULL DEFAULT NULL,
+    PRIMARY KEY (`Api_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Truncar tablas antes de insertar `api_users`
